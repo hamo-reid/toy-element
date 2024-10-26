@@ -1,0 +1,16 @@
+{
+  // 继承@tsconfig/node18/tsconfig.json配置文件
+  "extends": "@tsconfig/node18/tsconfig.json",
+  // 包含packages目录下的所有.config.ts文件
+  "include": ["packages/**/**.config.ts"],
+  "compilerOptions": {
+    // 将项目标记为复合项目
+    "composite": true,
+    // 使用ESNext模块系统
+    "module": "ESNext",
+    // 使用Bundler模块解析策略
+    "moduleResolution": "Bundler",
+    // 包含node类型定义
+    "types": ["node"]
+  }
+}
