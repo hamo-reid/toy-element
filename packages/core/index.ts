@@ -4,5 +4,5 @@ import '@toy-element/theme/index.css'
 
 const installer = makeInstaller(components);
 
-export * from "./components";
+export * from "@toy-element/components";
 export default installer;

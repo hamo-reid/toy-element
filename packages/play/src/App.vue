@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <hm-button /> 
+  <hm-button type="primary" size="small">test</hm-button> 
 </template>
 
 <style scoped>

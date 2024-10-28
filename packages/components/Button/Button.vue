@@ -1,10 +1,51 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+import { throttle } from 'lodash-es';
+import type { ButtonProps, ButtonEmits, ButtonInstance } from './types';
 defineOptions({
   name: 'HmButton'
 })
+const props = withDefaults(defineProps<ButtonProps>(), {
+  tag: 'button',
+  nativeType: 'button',
+  size: 'default',
+  type: 'primary',
+  useThrottle: true,
+  throttleDuration: 300
+})
+const emits = defineEmits<ButtonEmits>()
+const slots = defineSlots()
+const _ref = ref<HTMLButtonElement>()
+
+defineExpose<ButtonInstance>({
+  ref: _ref
+})
+
+const handleBtnClick = (e: MouseEvent) => emits('click', e)
+const handleBtnClickThrottle = throttle(handleBtnClick, props.throttleDuration)
 </script>
 <template>
-  <button style="background-color: blue;">
-    test button
-  </button>
+  <component
+    :is="tag"
+    ref="_ref"
+    class="hm-button"
+    :type="tag === 'button' ? nativeType : void 0"
+    :disabled="disabled || loading ? true : void 0"
+    :class="{
+      [`hm-button--${type}`]: type,
+      [`hm-button--${size}`]: size,
+      'is-plain': plain,
+      'is-round': round,
+      'is-circle': circle,
+      'is-disabled': disabled,
+      'is-loading': loading
+    }"
+    @click="(e: MouseEvent) => useThrottle ? handleBtnClickThrottle(e) : handleBtnClick(e)"
+  >
+  <slot></slot>
+  </component>
 </template>
+
+<style>
+@import './style.css';
+</style>
