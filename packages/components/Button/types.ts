@@ -20,6 +20,18 @@ export interface ButtonProps {
   throttleDuration?: number;
 }
 
+export interface ButtonGroupProps {
+  type?: ButtonType;
+  size?: ButtonSize;
+  disabled?: boolean;
+}
+
+export interface ButtonGroupContext {
+  type?: ButtonType;
+  size?: ButtonSize;
+  disabled?: boolean;
+}
+
 export interface ButtonEmits {
   (e: 'click', event: MouseEvent): void;
 }
@@ -27,3 +39,4 @@ export interface ButtonEmits {
 export interface ButtonInstance {
   ref: Ref<HTMLButtonElement | void>;
 }
+
