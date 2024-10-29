@@ -105,7 +105,6 @@ describe('Button.vue', () => {
     });
 
     const IconElement = wrapper.findComponent(Icon);
-    console.log(IconElement.attributes('size'));
 
     expect(IconElement.find('.loading-icon').exists()).toBe(true);
     expect(IconElement.exists()).toBeTruthy();

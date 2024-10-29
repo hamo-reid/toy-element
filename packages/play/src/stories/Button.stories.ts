@@ -1,5 +1,6 @@
 import type { Meta, StoryObj, ArgTypes } from '@storybook/vue3';
 import { fn, within, userEvent, expect, clearAllMocks } from '@storybook/test';
+import "toy-element/dist/index.css";
 
 import { HmButton, HmButtonGroup } from 'toy-element';
 import { set } from 'lodash-es';
