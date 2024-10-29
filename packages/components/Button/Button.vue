@@ -52,6 +52,6 @@ const handleBtnClickThrottle = throttle(handleBtnClick, props.throttleDuration, 
   </component>
 </template>
 
-<style scoped>
+<style>
 @import './style.css';
 </style>

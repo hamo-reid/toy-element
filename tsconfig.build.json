@@ -1,0 +1,36 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "target": "ES2020", // 指定编译后的JavaScript版本为ES2020
+    "useDefineForClassFields": true, // 使用defineForClassFields
+    "module": "ESNext", // 指定模块系统为ESNext
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], // 指定编译时所需的库文件
+    "skipLibCheck": true, // 跳过库文件的类型检查
+
+    /* Bundler mode */
+    "moduleResolution": "bundler", // 指定模块解析策略为bundler
+    "allowImportingTsExtensions": true, // 允许导入ts文件
+    "resolveJsonModule": true, // 允许导入json文件
+    "isolatedModules": true, // 将每个文件作为单独的模块进行编译
+    "noEmit": true, // 不生成输出文件
+    "jsx": "preserve", // 保留JSX代码
+    "jsxImportSource": "vue", // 指定JSX导入源为vue
+
+    /* Linting */
+    "strict": true, // 启用所有严格类型检查选项
+    "noUnusedLocals": true, // 禁止出现未使用的局部变量
+    "noUnusedParameters": true, // 禁止出现未使用的参数
+    "noFallthroughCasesInSwitch": true // 禁止switch语句中的case穿透
+  },
+  "include": [
+    "packages/core/index.ts",
+    "packages/hooks/**/*.ts",
+    "packages/utils/**/*.ts",
+    "packages/components/index.ts",
+    "packages/components/**/*.ts",
+    "packages/components/**/*.vue",
+  ], // 指定需要包含的文件
+  "exclude": [
+    "packages/components/vitest.config.ts"
+  ]
+}

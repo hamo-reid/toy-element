@@ -22,6 +22,6 @@ provide<ButtonGroupContext>(BUTTON_GROUP_CONTEXT_KEY, reactive({
   </div>
 </template>
 
-<style scoped>
+<style>
 @import './style.css';
 </style>
