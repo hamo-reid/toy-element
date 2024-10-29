@@ -26,17 +26,11 @@ defineExpose<ButtonInstance>({
 })
 
 const handleBtnClick = (e: MouseEvent) => emits('click', e)
-const handleBtnClickThrottle = throttle(handleBtnClick, props.throttleDuration)
+const handleBtnClickThrottle = throttle(handleBtnClick, props.throttleDuration, { trailing: false })
 </script>
 <template>
-  <component
-    :is="tag"
-    ref="_ref"
-    class="hm-button"
-    :autofocus="autofocus"
-    :type="tag === 'button' ? nativeType : void 0"
-    :disabled="disabled || loading ? true : void 0"
-    :class="{
+  <component :is="tag" ref="_ref" class="hm-button" :autofocus="autofocus"
+    :type="tag === 'button' ? nativeType : void 0" :disabled="disabled || loading ? true : void 0" :class="{
       [`hm-button--${type}`]: type,
       [`hm-button--${size}`]: size,
       'is-plain': plain,
@@ -44,16 +38,14 @@ const handleBtnClickThrottle = throttle(handleBtnClick, props.throttleDuration)
       'is-circle': circle,
       'is-disabled': disabled,
       'is-loading': loading
-    }"
-    @click="(e: MouseEvent) => useThrottle ? handleBtnClickThrottle(e) : handleBtnClick(e)"
-  >
-  <template v-if="loading">
-    <slot name="loading">
-      <hm-icon class="loading-icon" :icon="loadingIcon ?? 'spinner'" :style="iconStyle" size="1x" spin/>
-    </slot>
-  </template>
-  <hm-icon v-if="icon && !loading" :icon="icon" :style="iconStyle" size="1x" />
-  <slot></slot>
+    }" @click="(e: MouseEvent) => useThrottle ? handleBtnClickThrottle(e) : handleBtnClick(e)">
+    <template v-if="loading">
+      <slot name="loading">
+        <hm-icon class="loading-icon" :icon="loadingIcon ?? 'spinner'" :style="iconStyle" size="1x" spin />
+      </slot>
+    </template>
+    <hm-icon v-if="icon && !loading" :icon="icon" :style="iconStyle" size="1x" />
+    <slot></slot>
   </component>
 </template>
 
