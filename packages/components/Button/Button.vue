@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { throttle } from 'lodash-es';
 import type { ButtonProps, ButtonEmits, ButtonInstance } from './types';
+import HmIcon from '../Icon/Icon.vue';
 defineOptions({
   name: 'HmButton'
 })
@@ -16,6 +17,9 @@ const props = withDefaults(defineProps<ButtonProps>(), {
 const emits = defineEmits<ButtonEmits>()
 const slots = defineSlots()
 const _ref = ref<HTMLButtonElement>()
+const iconStyle = computed(() => ({
+  marginRight: slots.default ? '6px' : '0'
+}))
 
 defineExpose<ButtonInstance>({
   ref: _ref
@@ -29,6 +33,7 @@ const handleBtnClickThrottle = throttle(handleBtnClick, props.throttleDuration)
     :is="tag"
     ref="_ref"
     class="hm-button"
+    :autofocus="autofocus"
     :type="tag === 'button' ? nativeType : void 0"
     :disabled="disabled || loading ? true : void 0"
     :class="{
@@ -42,6 +47,12 @@ const handleBtnClickThrottle = throttle(handleBtnClick, props.throttleDuration)
     }"
     @click="(e: MouseEvent) => useThrottle ? handleBtnClickThrottle(e) : handleBtnClick(e)"
   >
+  <template v-if="loading">
+    <slot name="loading">
+      <hm-icon class="loading-icon" :icon="loadingIcon ?? 'spinner'" :style="iconStyle" size="1x" spin/>
+    </slot>
+  </template>
+  <hm-icon v-if="icon && !loading" :icon="icon" :style="iconStyle" size="1x" />
   <slot></slot>
   </component>
 </template>

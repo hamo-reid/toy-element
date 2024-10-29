@@ -3,4 +3,4 @@ import { withInstall } from '@toy-element/utils';
 
 export const HmButton = withInstall(Button);
 
-export default HmButton;
+export * from './types';
