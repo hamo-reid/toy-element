@@ -3,6 +3,7 @@ import type { CollapseItemProps } from './types'
 import { COLLAPSE_CTX_KEY } from './constant';
 import { inject, computed } from 'vue'
 import HmIcon from '../Icon/Icon.vue';
+import transitionEvents from './transitionItem';
 
 defineOptions({
   name: 'HmCollapseItem'
@@ -34,13 +35,13 @@ function handleClick() {
       </span>
       <hm-icon icon="angle-right" class="header-angle" />
     </div>
-    <!-- <transition name="slide" v-on="transitionEvents"> -->
-    <div class="hm-collapse-item__wrapper" v-show="isActive">
-      <div class="hm-collapse-item__content" :id="`item-content-${name}`">
-        <slot></slot>
+    <transition name="slide" v-on="transitionEvents">
+      <div class="hm-collapse-item__wrapper" v-show="isActive">
+        <div class="hm-collapse-item__content" :id="`item-content-${name}`">
+          <slot></slot>
+        </div>
       </div>
-    </div>
-    <!-- </transition> -->
+    </transition>
   </div>
 </template>
 
