@@ -2,9 +2,12 @@
 import type { CollapseProps, CollapseEmits, CollapseItemName } from './types'
 import { COLLAPSE_CTX_KEY } from './constant';
 import { ref, provide, watch, watchEffect } from 'vue';
+import { debugWarn } from '@toy-element/utils';
+
+const COMP_NAME = 'HmCollapse';
 
 defineOptions({
-  name: 'HmCollapse'
+  name: COMP_NAME
 })
 const props = defineProps<CollapseProps>()
 const emits = defineEmits<CollapseEmits>()
@@ -40,7 +43,7 @@ function updateActiveNames(newNames: CollapseItemName[]) {
 
 watchEffect(() =>{
   if (props.accordion && activeNames.value.length > 1) {
-    console.warn('Accordion mode can only contain one active item.')
+    debugWarn(COMP_NAME, 'Accordion mode can only contain one active panel.')
   }
 })
 
