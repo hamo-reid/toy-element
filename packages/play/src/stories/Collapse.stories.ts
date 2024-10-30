@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { HmCollapse, HmCollapseItem } from 'toy-element';
-import "toy-element/dist/index.css";
+import 'toy-element/dist/theme/Collapse.css'
 
 type Story = StoryObj<typeof HmCollapse>;
 const meta: Meta<typeof HmCollapse> = {
