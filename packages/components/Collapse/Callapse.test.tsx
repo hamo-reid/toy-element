@@ -166,7 +166,7 @@ describe("Collapse.vue", () => {
       `
       [
         [
-          "Accordion mode can only have one active item",
+          [HmUIError: [HmCollapse]: Accordion mode can only contain one active panel.],
         ],
       ]
     `

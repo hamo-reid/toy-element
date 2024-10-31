@@ -12,7 +12,6 @@ const props = defineProps<CollapseItemProps>()
 const ctx = inject(COLLAPSE_CTX_KEY, void 0)
 
 const isActive = computed(() => ctx?.activeNames.value.includes(props.name))
-console.log(isActive.value)
 
 function handleClick() {
   if (props.disabled) return
