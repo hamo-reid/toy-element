@@ -1,5 +1,4 @@
 .hm-text {
-  --hm-text-font-weight: var(--hm-font-weight-primary);
   --hm-text-color: var(--hm-text-color-regular);
 }
 
@@ -7,7 +6,6 @@
   margin: 0;
   padding: 0;
   align-self: center;
-  font-weight: var(--hm-text-font-weight);
   color: var(--hm-text-color);
   overflow-wrap: break-word;
 

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { TextProps } from './types';
 
-const props = withDefaults(defineProps<TextProps>(), {
+withDefaults(defineProps<TextProps>(), {
   tag: 'span',
   truncated: false,
 })
@@ -18,3 +18,7 @@ const props = withDefaults(defineProps<TextProps>(), {
     <slot></slot>
   </component>
 </template>
+
+<style scoped>
+@import './style.css';
+</style>
