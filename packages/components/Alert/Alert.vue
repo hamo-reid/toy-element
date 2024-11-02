@@ -44,7 +44,7 @@ defineExpose<AlertInstance>({
       [`hm-alert__${effect}`]: effect,
       'text-center': center,
     }">
-      <hm-icon v-if="showIcon" class="hm-alert__icon" :class="{ 'big-icon': description }" :icon="iconName"></hm-icon>
+      <hm-icon v-if="showIcon" class="hm-alert__icon" :class="{ 'big-icon': withDescription }" :icon="iconName"></hm-icon>
       <div class="hm-alert__content">
         <span class="hm-alert__title" :class="{ 'with-desc': withDescription }"
           :style="{ display: center && !showIcon ? 'flow' : 'inline' }">

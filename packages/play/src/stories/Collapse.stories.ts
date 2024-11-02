@@ -11,6 +11,10 @@ const meta: Meta<typeof HmCollapse> = {
 };
 
 export const Default: Story = {
+  args: {
+    accordion: true,
+    modelValue: ["a"],
+  },
   render: (args: any) => ({
     components: {
       HmCollapse,
@@ -35,10 +39,6 @@ export const Default: Story = {
     </hm-collapse>
     `,
   }),
-  args: {
-    accordion: true,
-    modelValue: ["a"],
-  },
 };
 
 

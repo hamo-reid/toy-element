@@ -16,8 +16,8 @@ dist-ssr
 /cyperss/videos/
 /cypress/srceenshots/
 
-.vitepress/dist
-.vitepress/cache
+**/.vitepress/dist
+**/.vitepress/cache
 
 # Editor directories and files
 .vscode/*
@@ -30,4 +30,3 @@ dist-ssr
 *.sln
 *.sw?
 
-!libs/vitepress-preview-component

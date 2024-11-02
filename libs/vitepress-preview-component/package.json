@@ -12,7 +12,7 @@
       "import": "./_dist/preview-component.js",
       "require": "./_dist/preview-component.umd.cjs"
     },
-    "./dist/style.css": "./_dist/style.css"
+    "./style.css": "./_dist/style.css"
   },
   "files": [
     "dist",
