@@ -21,7 +21,6 @@ const slots = defineSlots()
 const visible = ref(true);
 
 const iconName = computed(() => typeIconMap.get(props.type) ?? 'circle-info');
-console.log(iconName.value);
 const withDescription = computed(() => props.description || slots.default) // 是否有描述
 function close() {
   visible.value = false;

@@ -1,0 +1,31 @@
+.hm-text {
+  --hm-text-font-weight: var(--hm-font-weight-primary);
+  --hm-text-color: var(--hm-text-color-regular);
+}
+
+.hm-text {
+  margin: 0;
+  padding: 0;
+  align-self: center;
+  font-weight: var(--hm-text-font-weight);
+  color: var(--hm-text-color);
+  overflow-wrap: break-word;
+
+  &.is-truncated {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@each $val in primary, success, warning, danger, info {
+  .hm-text--$(val) {
+    --hm-text-color: var(--hm-color-$(val));
+  }
+}
+
+@each $val in large, small {
+  .hm-text--$(val) {
+    --hm-text-font-size: var(--hm-font-size-$(val));
+  }
+}
