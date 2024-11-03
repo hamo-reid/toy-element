@@ -29,6 +29,7 @@ export default defineConfig({
           { text: 'Button 按钮', link: '/components/button' },
           { text: 'Collapse 折叠面板', link: '/components/collapse' },
           { text: 'Icon 图标', link: '/components/icon' },
+          { text: 'Text 文本', link: '/components/text' },
         ]
       },
       {

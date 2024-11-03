@@ -24,6 +24,6 @@
 
 @each $val in large, small {
   .hm-text--$(val) {
-    --hm-text-font-size: var(--hm-font-size-$(val));
+    font-size: var(--hm-font-size-$(val));
   }
 }

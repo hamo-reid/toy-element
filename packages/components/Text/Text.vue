@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import type { TextProps } from './types';
 
+defineOptions({
+  name: 'HmText',
+})
+
 withDefaults(defineProps<TextProps>(), {
   tag: 'span',
   truncated: false,
