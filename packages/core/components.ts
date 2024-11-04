@@ -5,7 +5,8 @@ import {
   HmCollapse,
   HmCollapseItem,
   HmAlert,
-  HmText
+  HmText,
+  HmLink
 } from '@toy-element/components';
 import type { Plugin } from 'vue';
 export default [
@@ -15,5 +16,6 @@ export default [
   HmCollapse,
   HmCollapseItem,
   HmAlert,
-  HmText
+  HmText,
+  HmLink
 ] as Plugin[];

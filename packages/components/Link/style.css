@@ -1,0 +1,30 @@
+.hm-link {
+  --hm-link-color: var(--hm-text-color-regular);
+  --hm-link-hover-color: var(--hm-text-color-primary);
+  --hm-link-disabled-color: var(--hm-text-disabled-color);
+}
+
+.hm-link {
+  color: var(--hm-link-color);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--hm-link-hover-color);
+  }
+
+  &.is-disabled {
+    color: var(--hm-link-disabled-color);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+@each $val in primary, success, danger, warning, info {
+  .hm-link--$(val) {
+    --hm-link-color: var(--hm-text-color-$(val));
+    --hm-link-hover-color: var(--hm-text-color-$(val)-light-9);
+    --hm-link-disabled-color: var(--hm-text-color-$(val)-light-7);
+  }
+}

@@ -4,7 +4,13 @@
   /* colors */
   --hm-color-white: #ffffff;
   --hm-color-black: #000000;
-  --colors: (primary: #409eff, success: #67c23a, warning: #e6a23c, danger: #f56c6c, info: #909399);
+  --colors: (
+    primary: #409eff,
+    success: #67c23a,
+    warning: #e6a23c,
+    danger: #f56c6c,
+    info: #909399
+  );
   --hm-bg-color: #ffffff;
   --hm-bg-color-page: #f2f3f5;
   --hm-bg-color-overlay: #ffffff;
@@ -26,11 +32,11 @@
   --hm-fill-color-dark: #ebedf0;
   --hm-fill-color-darker: #e6e8eb;
   --hm-fill-color-blank: #ffffff;
-  
+
   @each $val, $color in var(--colors) {
     --hm-color-$(val): $(color);
     @for $i from 3 to 9 {
-      --hm-color-$(val)-light-$(i): mix(#fff, $(color), 0.$(i));
+      --hm-color-$(val)-light-$(i): mix(#fff, $(color), 0$ (i));
     }
     --hm-color-$(val)-dark-2: mix(#000, $(color), 0.2);
   }
@@ -39,7 +45,8 @@
   --hm-border-width: 1px;
   --hm-border-style: solid;
   --hm-border-color-hover: var(--hm-text-color-disabled);
-  --hm-border: var(--hm-border-width) var(--hm-border-style) var(--hm-border-color);
+  --hm-border: var(--hm-border-width) var(--hm-border-style)
+    var(--hm-border-color);
   --hm-border-radius-base: 4px;
   --hm-border-radius-small: 2px;
   --hm-border-radius-round: 20px;
@@ -52,8 +59,9 @@
   --hm-font-size-base: 14px;
   --hm-font-size-small: 13px;
   --hm-font-size-extra-small: 12px;
-  --hm-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
-    'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
+  --hm-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial,
+    sans-serif;
   --hm-font-weight-primary: 500;
 
   /*disabled*/
