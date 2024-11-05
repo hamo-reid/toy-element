@@ -3,8 +3,8 @@ title: Text 图标
 description: Text 组件文档
 
 next:
-  link: /components/Icon
-  text: Icon 图标
+  link: /components/link
+  text: Link 链接
 
 prev:
   link: /components/Alert

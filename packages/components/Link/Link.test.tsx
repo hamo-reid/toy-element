@@ -51,11 +51,4 @@ describe('Link.vue', () => {
     expect(wrapper.find('a').attributes('href')).toBe(void 0);
     expect(wrapper.classes()).toContain('is-disabled');
   });
-
-  it('should be underline when underline prop is set', () => {
-    const wrapper = mount(<Link href='https://example.com' underline={true}>Underline</Link>);
-    expect(wrapper.element.style.textDecoration).toBe('underline');
-    const wrapper2 = mount(<Link href='https://example.com' underline={false}>Underline</Link>);
-    expect(wrapper2.element.style.textDecoration).toBe('none');
-  })
 });

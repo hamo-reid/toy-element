@@ -13,7 +13,7 @@ prev:
 
 # Icon 图标
 
-Icon 组件基于 font-awsome 图标库，支持所有 free 的font-awesome 图标。
+Icon 组件基于 font-awesome 图标库，支持所有 free 的font-awesome 图标。
 
 ## 基础用法
 

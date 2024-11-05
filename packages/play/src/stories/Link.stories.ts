@@ -1,5 +1,6 @@
 import type { StoryObj, Meta, ArgTypes } from '@storybook/vue3';
 import { HmLink } from 'toy-element';
+import 'toy-element/dist/theme/Link.css'
 
 const meta: Meta<typeof HmLink> = {
   title: 'Example/Link',
